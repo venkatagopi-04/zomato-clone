@@ -14,7 +14,7 @@ const HomePage = () => {
     const fetchRestaurants = useCallback(async () => {
         try {
             const { data } = await axios.get(
-                `http://localhost:5000/api/restaurants?page=${page}&search=${search}`
+                `https://restaurant-listing-backend-mvff.onrender.com/api/restaurants?page=${page}&search=${search}`
             );
             setRestaurants(data.restaurants || []); // Fallback to empty array
             setTotal(data.total || 0);
