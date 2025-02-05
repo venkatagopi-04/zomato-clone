@@ -14,7 +14,7 @@ const SearchBar = ({ setSearch, setRestaurantById }) => {
         }
     
         try {
-            const response = await fetch(`http://localhost:5000/api/restaurants/restaurant/${numericId}`);
+            const response = await fetch(`https://restaurant-listing-backend-mvff.onrender.com/api/restaurants/restaurant/${numericId}`);
             const data = await response.json();
             console.log(data);
             if (data.error) {
