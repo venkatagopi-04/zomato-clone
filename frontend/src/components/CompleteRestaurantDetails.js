@@ -13,7 +13,7 @@ const RestaurantDetails = () => {
         const fetchRestaurantDetails = async () => {
             try {
                 setLoading(true);
-                const response = await axios.get(`http://localhost:5000/api/restaurants/completeDetails/${id}`);
+                const response = await axios.get(`https://restaurant-listing-backend-mvff.onrender.com/api/restaurants/completeDetails/${id}`);
                 setRestaurant(response.data);
             } catch (err) {
                 setError("Error fetching restaurant details.");
