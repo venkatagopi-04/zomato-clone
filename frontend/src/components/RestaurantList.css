@@ -1,0 +1,181 @@
+/* General Styles */
+.restaurant-list-container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  font-family: Arial, sans-serif;
+  flex-direction: row; /* Change from column to row */
+  align-items: flex-start; /* Align items at the top */
+}
+
+
+/* Main Content */
+.main-content {
+  flex: 1; /* Takes remaining space */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Restaurant Grid */
+.restaurants-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 1024px) {
+  .restaurants-grid {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .restaurant-list-container {
+      flex-direction: column; /* Stack sidebar and content on smaller screens */
+  }
+
+}
+
+/* Sidebar */
+.sidebar {
+  
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column; /* Stack filters vertically */
+  gap: 20px;
+  width: 300px; /* Fixed width for sidebar */
+  position: sticky;
+  top: 20px;
+  height: 100vh;
+}
+.sidebar h3 {
+  margin-top:70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 10px;
+  font-size:1.5rem;
+  transition: all 0.3s ease; /* Smooth transition for the text itself */
+}
+
+.sidebar h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200px;
+  height: 2px;
+  background: linear-gradient(to right, #ff6600, #007bff);
+  transition: width 1.3s ease; /* Smooth transition for the line */
+}
+
+.sidebar h3:hover::after {
+  width: 50%; /* Shrink the line width to 50% on hover */
+  left: 25%; /* Center the line when it shrinks */
+}
+
+
+
+.sidebar button {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 15px;
+  height: 60px;
+  max-width: 250px;
+  background: rgba(243, 245, 245, 0.5); /* Light blue with transparency for glassy look */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Slightly darker shadow for depth */
+  margin-top: 10px;
+  margin-bottom: 20px;
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  border: 2px solid rgba(244, 111, 34, 0.2); /* Light blue border */
+  transition: all 0.3s ease; /* Smooth transitions */
+  font-weight: bolder;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.sidebar button:hover {
+  background: rgba(230, 238, 200, 0.855); /* Darker blue when hovered */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+}
+
+.sidebar button:active {
+  transform: scale(0.98); /* Slightly shrink on click */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Reset shadow */
+}
+
+.sidebar div:first-child {
+  margin-top: 0;
+}
+
+.sidebar div:last-child {
+  margin-bottom: 0;
+}
+
+
+/* Popup Overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Popup Content (Card Style) */
+.popup-content {
+  background-color: white;
+  border-radius: 10px; /* Rounded corners for a card-like look */
+  padding: 20px;
+  width: 500px; /* Fixed size of 500px */
+  height: auto; /* Adjust height based on content */
+  position: relative;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: #ff0000;
+}
+
+/* Popup Title */
+.popup-content h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Optional Styling for Popup Components (ImageUploader & AddressInput) */
+.ImageUploader, .AddressInput {
+  width: 100%;
+}

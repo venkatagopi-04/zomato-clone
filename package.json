@@ -1,0 +1,24 @@
+{
+    "name": "zomato",
+    "version": "1.0.0",
+    "description": "Restarent Listing",
+    "scripts": {
+        "start": "npm run both",
+        "both": "concurrently \"npm run server\" \"npm run client\"",
+        "server": "cd backend && npm run dev",
+        "client": "cd frontend && npm run dev"
+    },
+    "devDependencies": {
+        "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+        "concurrently": "^8.2.2"
+    },
+    "dependencies": {
+        "@google-cloud/vision": "^4.3.2",
+        "@react-google-maps/api": "^2.20.5",
+        "mongodb": "^6.13.0",
+        "multer": "^1.4.5-lts.1",
+        "mysql2": "^3.11.5",
+        "pg": "^8.13.1",
+        "use-places-autocomplete": "^4.0.1"
+    }
+}

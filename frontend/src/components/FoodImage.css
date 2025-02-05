@@ -1,0 +1,89 @@
+.image-uploader-container {
+    width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Slightly darker shadow for a more refined look */
+    text-align: center;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column; /* Arrange children vertically */
+    justify-content: space-between; /* Distribute space between the items */
+    gap: 20px; /* Add space between all items */
+}
+
+.image-uploader-container input[type="file"] {
+    display: none;
+}
+
+.upload-label {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background: #ff6600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.upload-label:hover {
+    background: #e65c00;
+}
+
+.upload-button {
+    padding: 12px 20px; /* Increased padding for a more substantial button */
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background: #28a745;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.upload-button:hover {
+    background: #218838;
+}
+
+.result-container {
+    max-width: 300px;
+    padding: 15px;
+    border-radius: 8px;
+    background: #f8f9fa;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.result-container p {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.detected-food {
+    color: #ff6600;
+}
+
+.detected-cuisine {
+    color: #007bff;
+}
+
+/* Responsive Adjustment for Mobile */
+@media (max-width: 480px) {
+    .image-uploader-container {
+        width: 90%; /* Full width on smaller screens */
+        padding: 15px;
+    }
+
+    .upload-label, .upload-button {
+        font-size: 14px; /* Smaller font size for smaller screens */
+        padding: 10px 15px; /* Adjust padding */
+    }
+
+    .result-container {
+        max-width: 100%; /* Full width result container */
+    }
+}
