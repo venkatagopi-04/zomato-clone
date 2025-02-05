@@ -41,13 +41,13 @@ const RestaurantList = () => {
     const fetchRestaurants = async (page, location) => {
         try {
             setLoading(true);
-            let url = `http://localhost:5000/api/restaurants?page=${page}&limit=9`;
+            let url = `https://restaurant-listing-backend-mvff.onrender.com/api/restaurants?page=${page}&limit=9`;
 
             if (location) {
                 const lat = parseFloat(location.latitude);
                 const lng = parseFloat(location.longitude);
                 if (!isNaN(lat) && !isNaN(lng)) {
-                    url = `http://localhost:5000/api/restaurants/findByAddress?latitude=${lat}&longitude=${lng}&page=${page}`;
+                    url = `https://restaurant-listing-backend-mvff.onrender.com/api/restaurants/findByAddress?latitude=${lat}&longitude=${lng}&page=${page}`;
                 } else {
                     console.error("Invalid latitude or longitude:", location);
                     setError("Invalid location data.");
@@ -74,7 +74,7 @@ const RestaurantList = () => {
     const fetchRestaurantsByCuisine = async (cuisine, page) => {
         try {
             setLoading(true);
-            const url = `http://localhost:5000/api/findByCuisine?cuisine=${encodeURIComponent(cuisine)}&page=${page}`;
+            const url = `https://restaurant-listing-backend-mvff.onrender.com/api/findByCuisine?cuisine=${encodeURIComponent(cuisine)}&page=${page}`;
             const response = await axios.get(url);
             setRestaurants(response.data.restaurants);
             setFilteredRestaurants(response.data.restaurants);
